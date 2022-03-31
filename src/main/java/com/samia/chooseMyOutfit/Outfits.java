@@ -1,4 +1,4 @@
 package com.samia.chooseMyOutfit;
 
-public class Tops {
+public class Outfits {
 }

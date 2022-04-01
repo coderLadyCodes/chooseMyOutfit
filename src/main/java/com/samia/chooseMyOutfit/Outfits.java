@@ -3,8 +3,19 @@ package com.samia.chooseMyOutfit;
 import javax.persistence.*;
 
 @Entity
-@Table(name="outfits")
+@Table(name="outfits", indexes = {
+        @Index(columnList = "name"),
+        @Index(columnList = "color"),
+        @Index(columnList = "photo_link"),
+        @Index(columnList = "comfy"),
+        @Index(columnList = "chic"),
+        @Index(columnList = "thikness"),
+        @Index(columnList = "cloths"),
+        @Index(columnList = "shape"),
+})
+
 public class Outfits {
+
     public enum Thikness{
         hot, normal, cold
     }
@@ -13,6 +24,9 @@ public class Outfits {
         top, bottom, shoes
     }
 
+    public enum Shape{
+        loose, normal, tight
+    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,11 +38,14 @@ public class Outfits {
     @Column(name = "color", nullable = false)
     private String color;
 
+    @Column(name = "photo_link", nullable = false)
+    private String photoLink;
+
     @Column(name = "comfy", nullable = false)
-    private Boolean comfy;
+    private boolean comfy;
 
     @Column(name = "chic", nullable = false)
-    private Boolean chic;
+    private boolean chic;
 
     @Column(name = "thikness", nullable = false)
     private Thikness thikness;
@@ -36,6 +53,9 @@ public class Outfits {
     @Column(name = "cloths", nullable = false)
     private Cloths cloths;
 
+
+    @Column(name = "shape", nullable = false)
+    private Shape shape;
 
     public Outfits() {
     }

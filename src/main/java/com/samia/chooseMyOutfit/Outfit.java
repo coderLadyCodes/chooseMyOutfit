@@ -14,7 +14,7 @@ import javax.persistence.*;
         @Index(columnList = "shape"),
 })
 
-public class Outfits {
+public class Outfit {
 
     public enum Thikness{
         hot, normal, cold
@@ -57,10 +57,10 @@ public class Outfits {
     @Column(name = "shape", nullable = false)
     private Shape shape;
 
-    public Outfits() {
+    public Outfit() {
     }
 
-    public Outfits(String name, String color, String photoLink, boolean comfy, boolean chic, Thikness thikness, Cloths cloths, Shape shape) {
+    public Outfit(String name, String color, String photoLink, boolean comfy, boolean chic, Thikness thikness, Cloths cloths, Shape shape) {
         this.name = name;
         this.color = color;
         this.photoLink = photoLink;
@@ -71,7 +71,7 @@ public class Outfits {
         this.shape = shape;
     }
 
-    public Outfits(Long id, String name, String color, String photoLink, boolean comfy, boolean chic, Thikness thikness, Cloths cloths, Shape shape) {
+    public Outfit(Long id, String name, String color, String photoLink, boolean comfy, boolean chic, Thikness thikness, Cloths cloths, Shape shape) {
         this.id = id;
         this.name = name;
         this.color = color;

@@ -5,5 +5,4 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface OutfitRepository extends JpaRepository<Outfit, Long> {
-    // CODE HERE
 }
